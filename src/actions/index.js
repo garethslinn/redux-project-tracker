@@ -1,4 +1,4 @@
-import { ADD_USER} from '../constants';
+import { ADD_USER } from '../constants';
 
 export const addUser = (firstName, secondName, email, admin, active) => {
     const action = {

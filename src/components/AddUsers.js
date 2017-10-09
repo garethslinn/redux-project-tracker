@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser} from "../actions";
+import { addUser} from '../actions';
 
 class AddUsers extends Component {
     constructor(props) {
@@ -60,9 +60,6 @@ addUser() {
         )
     }
 
-    showUsers() {
-
-    }
 
     render() {
         return(

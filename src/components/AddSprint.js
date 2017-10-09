@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser} from "../actions";
+import { addSprint } from "../actions/addSprint";
 
 
 class AddSprint extends Component {
@@ -13,6 +13,16 @@ class AddSprint extends Component {
         }
 
     }
+
+    addSprint() {
+        this.props.addSprint(
+            this.state.sprint,
+            this.state.startDate,
+            this.state.endDate,
+        );
+        console.log('state1 ', this.state);
+    }
+
     render() {
         return (
 
@@ -63,10 +73,10 @@ class AddSprint extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log('state2 ', state);
+    console.log('state sprint ', state);
     return {
-        users: state
+        sprints: state
     }
 }
 
-export default connect(mapStateToProps, { addUser })(AddSprint);
+export default connect(mapStateToProps, { addSprint })(AddSprint);
