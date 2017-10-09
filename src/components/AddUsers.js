@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addUser} from "../actions";
 
-class App extends Component {
+class AddUsers extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -92,4 +92,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { addUser })(App);
+export default connect(mapStateToProps, { addUser })(AddUsers);
