@@ -20,6 +20,7 @@ const users = (state = [], action) => {
         case ADD_USER:
             users = [...state, user(action)];
             bake_cookie('users', users);
+            console.log('returning users ', users)
             return users;
         default:
             return state;
