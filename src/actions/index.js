@@ -1,9 +1,10 @@
 import { ADD_USER} from '../constants';
 
-export const addUser = (text) => {
+export const addUser = (firstName, secondName) => {
     const action = {
         type: ADD_USER,
-        text
+        firstName,
+        secondName
     };
     console.log('action in addUser', action);
     return action;

@@ -6,15 +6,14 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstName: ''
+            firstName: '',
+            secondName: ''
         }
     }
 
     addUser() {
-        this.props.addUser(this.state.text);
+        this.props.addUser(this.state.firstName, this.state.secondName);
     }
-
-
 
     render() {
         return(
@@ -26,9 +25,15 @@ class App extends Component {
                     <div className="form-group">
                         <input
                             className="form-control"
-                            placeholder="I have to..."
+                            placeholder="First Name."
                             onChange={event => this.setState( {firstName: event.target.value} ) }
                             />
+
+                        <input
+                            className="form-control"
+                            placeholder="Second Name"
+                            onChange={event => this.setState( {secondName: event.target.value} ) }
+                        />
                     </div>
 
                     <button
