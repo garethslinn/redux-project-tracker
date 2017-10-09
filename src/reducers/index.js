@@ -1,42 +1,25 @@
-import { ADD_REMINDER, CLEAR_REMINDERS, DELETE_REMINDER } from "../constants";
+import { ADD_USER } from "../constants";
 import { bake_cookie, read_cookie } from 'sfcookies';
-import { clearReminders } from "../actions/index";
 
-const reminder = (action) => {
-    let { text, dueDate } = action;
+const user = (action) => {
+    let { text } = action;
     return {
         id: Math.random(),
-        text,
-        dueDate
+        text
     }
 };
 
-const removeById = (state = [], id) => {
-    const reminders = state.filter(reminder => reminder.id !== id);
-    console.log('new reduced reminders ' , reminders );
-    return reminders;
-};
-
-
-const reminders = (state = [], action) => {
-    let reminders = null;
-    state = read_cookie('reminders');
+const users = (state = [], action) => {
+    let users = null;
+    state = read_cookie('users');
     switch(action.type) {
-        case ADD_REMINDER:
-            reminders = [...state, reminder(action)];
-            bake_cookie('reminders', reminders);
-            return reminders;
-        case DELETE_REMINDER:
-            reminders = removeById(state, action.id);
-            bake_cookie('reminders', reminders);
-            return reminders;
-        case CLEAR_REMINDERS:
-            reminders = []
-            bake_cookie('reminders', reminders);
-            return reminders;
+        case ADD_USER:
+            users = [...state, user(action)];
+            bake_cookie('users', users);
+            return users;
         default:
             return state;
     }
 };
 
-export default reminders;
+export default users;
