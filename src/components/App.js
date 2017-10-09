@@ -7,12 +7,21 @@ class App extends Component {
         super(props);
         this.state = {
             firstName: '',
-            secondName: ''
+            secondName: '',
+            email: '',
+            admin: '',
+            active: ''
         }
     }
 
     addUser() {
-        this.props.addUser(this.state.firstName, this.state.secondName);
+        this.props.addUser(
+            this.state.firstName,
+            this.state.secondName,
+            this.state.email,
+            this.state.admin,
+            this.state.active
+        );
     }
 
     render() {
@@ -26,14 +35,38 @@ class App extends Component {
                         <input
                             className="form-control"
                             placeholder="First Name."
+                            type="text"
                             onChange={event => this.setState( {firstName: event.target.value} ) }
                             />
 
                         <input
                             className="form-control"
                             placeholder="Second Name"
+                            type="text"
                             onChange={event => this.setState( {secondName: event.target.value} ) }
                         />
+
+                        <input
+                            className="form-control"
+                            placeholder="email"
+                            type="email"
+                            onChange={event => this.setState( {email: event.target.value} ) }
+                        />
+
+                        <input
+                            className="form-control"
+                            placeholder="admin"
+                            type="checkbox"
+                            onChange={event => this.setState( {admin: event.target.value} ) }
+                        />
+                        <input
+                            className="form-control"
+                            placeholder="active"
+                            type="checkbox"
+                            onChange={event => this.setState( {active: event.target.value} ) }
+                        />
+
+
                     </div>
 
                     <button

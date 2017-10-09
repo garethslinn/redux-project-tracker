@@ -2,11 +2,14 @@ import { ADD_USER } from "../constants";
 import { bake_cookie, read_cookie } from 'sfcookies';
 
 const user = (action) => {
-    let { firstName, secondName } = action;
+    let { firstName, secondName, email, admin, active } = action;
     return {
         id: Math.random(),
         firstName,
-        secondName
+        secondName,
+        email,
+        admin,
+        active
     }
 };
 
