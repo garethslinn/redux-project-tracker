@@ -69,15 +69,17 @@ class AddUsers extends Component {
 
                     </div>
 
-                    <button
-                        type="button"
-                        className="btn btn-success"
-                        onClick={ () => this.addUser() }>
-                        Add Reminder
-                    </button>
+
 
 
                 </div>
+
+                <button
+                    type="button"
+                    className="btn btn-success"
+                    onClick={ () => this.addUser() }>
+                    Add User
+                </button>
 
 
             </div>
