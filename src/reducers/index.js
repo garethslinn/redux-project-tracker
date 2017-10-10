@@ -1,30 +1,8 @@
-import { ADD_USER } from "../constants";
-import { bake_cookie, read_cookie } from 'sfcookies';
+import { combineReducers } from 'redux';
+import addUser from './addUser';
+import addSprint from './addSprint';
 
-const user = (action) => {
-    let { firstName, secondName, email, admin, active } = action;
-    return {
-        id: Math.random(),
-        firstName,
-        secondName,
-        email,
-        admin,
-        active
-    }
-};
-
-const users = (state = [], action) => {
-    let users = null;
-    state = read_cookie('users');
-    switch(action.type) {
-        case ADD_USER:
-            users = [...state, user(action)];
-            bake_cookie('users', users);
-            console.log('returning users ', users)
-            return users;
-        default:
-            return state;
-    }
-};
-
-export default users;
+export default combineReducers({
+    addUser,
+    addSprint
+})

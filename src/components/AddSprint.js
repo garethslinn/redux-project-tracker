@@ -15,10 +15,10 @@ class AddSprint extends Component {
     }
 
     addSprint() {
-        this.props.addSprint(
+        this.props.addSprint (
             this.state.sprint,
             this.state.startDate,
-            this.state.endDate,
+            this.state.endDate
         );
         console.log('state1 ', this.state);
     }

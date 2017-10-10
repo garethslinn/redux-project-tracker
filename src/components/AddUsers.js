@@ -1,30 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser} from '../actions';
+import { addUser } from "../actions/addUser";
 
 class AddUsers extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstName: '',
-            secondName: '',
-            email: '',
-            admin: '',
-            active: ''
+
+                firstName: '',
+                secondName: '',
+                email: '',
+                admin: '',
+                active: ''
+
         }
 
     }
 
-    componentDidMount() {
-
-  }
-
-    componentWillUnmount() {
-
-  }
-
-
-addUser() {
+    addUser() {
         this.props.addUser(
             this.state.firstName,
             this.state.secondName,
@@ -32,7 +25,7 @@ addUser() {
             this.state.admin,
             this.state.active
         );
-        console.log('state1 ', this.state);
+        console.log('addUser component state ', this.state);
     }
 
     renderUsers() {
@@ -126,7 +119,7 @@ addUser() {
                             <th>Active</th>
                         </tr>
                         </thead>
-                        {  this.renderUsers() }
+
                     </table>
                 </div>
 
@@ -137,7 +130,7 @@ addUser() {
 }
 
 function mapStateToProps(state) {
-    console.log('state2 ', state);
+    console.log('mapStateToProps state ', state);
     return {
         users: state
     }

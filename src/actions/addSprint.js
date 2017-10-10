@@ -1,4 +1,4 @@
-import { ADD_SPRINT} from '../constants';
+import { ADD_SPRINT } from '../constants';
 
 export const addSprint = (sprint, startDate, endDate) => {
     const action = {
