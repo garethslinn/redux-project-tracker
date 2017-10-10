@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addSprint } from "../actions/addSprint_action";
+import Nav from './Nav';
 
 class AddSprint extends Component {
     constructor(props) {
@@ -44,7 +45,8 @@ class AddSprint extends Component {
 
     render() {
         return (
-
+            <div>
+            <Nav />
             <form className="UsersTable">
                 <div className="title">
                     Add Sprint
@@ -100,6 +102,7 @@ class AddSprint extends Component {
                 </div>
 
             </form>
+            </div>
         )
     }
 }

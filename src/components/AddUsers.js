@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addUser } from "../actions/addUser_action";
+import Nav from './Nav';
 
 class AddUsers extends Component {
     constructor(props) {
@@ -52,6 +53,8 @@ class AddUsers extends Component {
 
     render() {
         return(
+            <div>
+                <Nav />
             <div className="UsersTable">
                 <div className="title">
                     Add Users
@@ -118,6 +121,7 @@ class AddUsers extends Component {
                 </div>
 
 
+            </div>
             </div>
         )
     }
