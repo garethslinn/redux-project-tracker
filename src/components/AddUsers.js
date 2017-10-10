@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser } from "../actions/addUser";
+import { addUser } from "../actions/addUser_action";
 
 class AddUsers extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
-                firstName: '',
-                secondName: '',
-                email: '',
-                admin: '',
-                active: ''
-
+            firstName: '',
+            secondName: '',
+            email: '',
+            admin: '',
+            active: ''
         }
-
     }
 
     addUser() {
@@ -103,9 +100,7 @@ class AddUsers extends Component {
                         </button>
 
                     </div>
-
                 </div>
-
 
                  <div className="container">
                     <table className="table table-striped">

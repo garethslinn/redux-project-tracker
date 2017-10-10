@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addSprint } from "../actions/addSprint";
-
+import { addSprint } from "../actions/addSprint_action";
 
 class AddSprint extends Component {
     constructor(props) {
@@ -22,10 +21,31 @@ class AddSprint extends Component {
         console.log('state1 ', this.state);
     }
 
+    renderSprints() {
+        const  { sprints }  = this.props;
+        console.log('sprints == ', sprints.addSprint);
+        return (
+
+            <tbody>
+            {
+                sprints.addSprint.map(sprint => {
+                    return (
+                        <tr key={ sprint.id }>
+                            <td>{ sprint.sprint }</td>
+                            <td>{ sprint.startDate }</td>
+                            <td>{ sprint.endDate }</td>
+                        </tr>
+                    )
+                })
+            }
+            </tbody>
+        )
+    }
+
     render() {
         return (
 
-            <div className="UsersTable">
+            <form className="UsersTable">
                 <div className="title">
                     Add Sprint
                 </div>
@@ -33,25 +53,27 @@ class AddSprint extends Component {
                     <div className="form-group">
                         <input
                             className="form-control"
-                            placeholder="First Name."
+                            placeholder="Sprint."
                             type="text"
+                            required
                             onChange={event => this.setState({sprint: event.target.value})}
                         />
 
                         <input
                             className="form-control"
-                            placeholder="Second Name"
-                            type="text"
+                            placeholder="Start Date"
+                            type="date"
+                            required
                             onChange={event => this.setState({startDate: event.target.value})}
                         />
 
                         <input
                             className="form-control"
-                            placeholder="email"
-                            type="email"
+                            placeholder="End Date"
+                            type="date"
+                            required
                             onChange={event => this.setState({endDate: event.target.value})}
                         />
-
 
                         <button
                             type="button"
@@ -64,9 +86,20 @@ class AddSprint extends Component {
 
                 </div>
 
+                <div className="container">
+                    <table className="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Sprints</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                        </tr>
+                        </thead>
+                        {  this.renderSprints() }
+                    </table>
+                </div>
 
-
-            </div>
+            </form>
         )
     }
 }
