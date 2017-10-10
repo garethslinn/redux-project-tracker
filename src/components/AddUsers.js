@@ -30,14 +30,13 @@ class AddUsers extends Component {
 
     renderUsers() {
         const  { users }  = this.props;
-        console.log('users == ', users);
+        console.log('users == ', users.addUser);
         return (
 
             <tbody>
                 {
-                    users.map(user => {
+                    users.addUser.map(user => {
                         return (
-
                             <tr key={user.id}>
                                 <td>{ user.firstName }</td>
                                 <td>{ user.secondName }</td>
@@ -119,7 +118,7 @@ class AddUsers extends Component {
                             <th>Active</th>
                         </tr>
                         </thead>
-
+                        {  this.renderUsers() }
                     </table>
                 </div>
 

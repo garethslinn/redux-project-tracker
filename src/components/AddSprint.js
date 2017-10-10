@@ -11,7 +11,6 @@ class AddSprint extends Component {
             startDate: '',
             endDate: ''
         }
-
     }
 
     addSprint() {
