@@ -1,4 +1,4 @@
-import { ADD_USER } from "../constants";
+import { ADD_USER, REMOVE_USER } from "../constants";
 import { bake_cookie, read_cookie } from 'sfcookies';
 
 const user = (action) => {
@@ -13,6 +13,12 @@ const user = (action) => {
     }
 };
 
+const removeById = (state = [], id) => {
+    const users = state.filter(user => user.id !== id);
+    console.log('new reduced users ' , users );
+    return users;
+};
+
 const users = (state = [], action) => {
     let users = null;
     state = read_cookie('users');
@@ -21,6 +27,10 @@ const users = (state = [], action) => {
             users = [...state, user(action)];
             bake_cookie('users', users);
             console.log('reducers users ', users);
+            return users;
+        case REMOVE_USER:
+            users = removeById(state, action.id);
+            bake_cookie('users', users);
             return users;
         default:
             return state;

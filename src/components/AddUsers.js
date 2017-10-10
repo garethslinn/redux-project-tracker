@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser } from "../actions/addUser_action";
+import { addUser, removeUser } from "../actions/user_action";
 import Nav from './Nav';
 
 class AddUsers extends Component {
@@ -26,6 +26,12 @@ class AddUsers extends Component {
         console.log('addUser component state ', this.state);
     }
 
+
+    removeUser(id) {
+        this.props.removeUser(id);
+    }
+
+
     renderUsers() {
         const  { users }  = this.props;
         console.log('users == ', users.addUser);
@@ -41,6 +47,13 @@ class AddUsers extends Component {
                                 <td>{ user.email }</td>
                                 <td>{ user.admin }</td>
                                 <td>{ user.active }</td>
+                                <td><button
+                                    type="button"
+                                    className="btn btn-success"
+                                    onClick={ () => this.removeUser(user.id) }>
+                                    Remove
+                                </button>
+                                </td>
                             </tr>
 
                         )
@@ -81,13 +94,14 @@ class AddUsers extends Component {
                             type="email"
                             onChange={event => this.setState({email: event.target.value})}
                         />
-
+                        <label>Admin</label>
                         <input
                             className="form-control"
                             placeholder="admin"
                             type="checkbox"
                             onChange={event => this.setState({admin: event.target.value})}
                         />
+                        <label>Active</label>
                         <input
                             className="form-control"
                             placeholder="active"
@@ -114,6 +128,7 @@ class AddUsers extends Component {
                             <th>Email</th>
                             <th>Admin</th>
                             <th>Active</th>
+                            <th>Remove User</th>
                         </tr>
                         </thead>
                         {  this.renderUsers() }
@@ -134,4 +149,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { addUser })(AddUsers);
+export default connect(mapStateToProps, { addUser, removeUser })(AddUsers);

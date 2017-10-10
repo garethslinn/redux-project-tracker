@@ -63,7 +63,7 @@ class AddSprint extends Component {
 
                         <input
                             className="form-control"
-                            placeholder="Start Date"
+                            placeholder="Start Date: dd/mm/yyyy"
                             type="date"
                             required
                             onChange={event => this.setState({startDate: event.target.value})}
@@ -71,7 +71,7 @@ class AddSprint extends Component {
 
                         <input
                             className="form-control"
-                            placeholder="End Date"
+                            placeholder="End Date: dd/mm/yyyy"
                             type="date"
                             required
                             onChange={event => this.setState({endDate: event.target.value})}
