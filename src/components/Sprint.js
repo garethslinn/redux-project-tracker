@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addSprint } from "../actions/sprint_action";
+import { addSprint, removeSprint } from "../actions/sprint_action";
 import Nav from './Nav';
 
 class AddSprint extends Component {
@@ -35,12 +35,23 @@ class AddSprint extends Component {
                             <td>{ sprint.sprint }</td>
                             <td>{ sprint.startDate }</td>
                             <td>{ sprint.endDate }</td>
+                            <td><button
+                                type="button"
+                                className="btn btn-success"
+                                onClick={ () => this.removeSprint(sprint.id) }>
+                                Remove
+                            </button>
+                            </td>
                         </tr>
                     )
                 })
             }
             </tbody>
         )
+    }
+
+    removeSprint(id) {
+        this.props.removeSprint(id);
     }
 
     render() {
@@ -114,4 +125,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { addSprint })(AddSprint);
+export default connect(mapStateToProps, { addSprint, removeSprint })(AddSprint);

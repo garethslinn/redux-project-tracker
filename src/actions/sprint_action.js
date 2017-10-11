@@ -1,4 +1,4 @@
-import { ADD_SPRINT } from '../constants';
+import { ADD_SPRINT, REMOVE_SPRINT } from '../constants';
 
 export const addSprint = (sprint, startDate, endDate) => {
     const action = {
@@ -8,5 +8,13 @@ export const addSprint = (sprint, startDate, endDate) => {
         endDate
     };
     console.log('action in addSprint', action);
+    return action;
+};
+
+export const removeSprint = (id) => {
+    const action = {
+        type: REMOVE_SPRINT,
+        id
+    };
     return action;
 };

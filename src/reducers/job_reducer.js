@@ -1,4 +1,4 @@
-import { ADD_JOB, REMOVE_JOB } from "../constants";
+import { ADD_JOB } from "../constants";
 import { bake_cookie, read_cookie } from 'sfcookies';
 
 const job = (action) => {
@@ -16,12 +16,6 @@ const job = (action) => {
     }
 };
 
-const remove = (state = [], id) => {
-    const jobs = state.filter(job => job.id !== id);
-    console.log('new reduced jobs ' , jobs );
-    return jobs;
-};
-
 const jobs = (state = [], action) => {
     let jobs = null;
     state = read_cookie('jobs');
@@ -30,10 +24,6 @@ const jobs = (state = [], action) => {
             jobs = [...state, job(action)];
             bake_cookie('jobs', jobs);
             console.log('reducers jobs ', jobs);
-            return jobs;
-        case REMOVE_JOB:
-            jobs = remove(state, action.id);
-            bake_cookie('jobs', jobs);
             return jobs;
         default:
             return state;

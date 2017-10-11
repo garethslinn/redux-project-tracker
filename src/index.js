@@ -4,6 +4,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import Jobs from './components/Jobs';
 import Users from './components/Users';
 import Sprint from './components/Sprint';
+import Views from './components/Views';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from'./reducers';
@@ -17,6 +18,7 @@ ReactDom.render(
             <Route path='/' component={Users} />
             <Route path='/sprint' component={Sprint} />
             <Route path='/jobs' component={Jobs} />
+            <Route path='/views' component={Views} />
         </Router>
     </Provider>,
     document.getElementById('root')

@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addJob, removeJob } from "../actions/job_action";
+import { addJob } from "../actions/job_action";
+
+
 import Nav from './Nav';
 
 class AddJobs extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            view: '',
             title: '',
             jobType: '',
             assigned: '',
@@ -30,11 +33,6 @@ class AddJobs extends Component {
             this.state.linked
         );
         console.log('addJob component state ', this.state);
-    }
-
-
-    removeJob(id) {
-        this.props.removeJob(id);
     }
 
     handle_assigned() {
@@ -88,12 +86,13 @@ class AddJobs extends Component {
                             <td>{ job.stat }</td>
                             <td>{ job.description }</td>
                             <td>{ job.linked }</td>
-                            <td><button
-                                type="button"
-                                className="btn btn-success"
-                                onClick={ () => this.removeJob(job.id) }>
-                                Remove
-                            </button>
+                            <td>
+
+
+                                <a
+                                    href={`/views?id${ job.id }`}>
+                                    View
+                                </a>
                             </td>
                         </tr>
 
@@ -188,7 +187,7 @@ class AddJobs extends Component {
                                         className="form-control"
                                         placeholder="linked"
                                         type="text"
-                                        onChange={event => this.setState({linked: event.target.value})}
+                                        onChange={event => this.setState({view: event.target.value})}
                                     />
                                     </div>
 
@@ -236,5 +235,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { addJob, removeJob })(AddJobs);
+export default connect(mapStateToProps, { addJob })(AddJobs);
 

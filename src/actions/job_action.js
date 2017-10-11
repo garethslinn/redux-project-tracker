@@ -1,4 +1,4 @@
-import { ADD_JOB, REMOVE_JOB} from '../constants';
+import { ADD_JOB, VIEW_JOB} from '../constants';
 
 export const addJob = (title, jobType, assigned, role, sprint, stat, description, linked) => {
     const action = {
@@ -16,9 +16,10 @@ export const addJob = (title, jobType, assigned, role, sprint, stat, description
     return action;
 };
 
-export const removeJob = (id) => {
+export const viewJob = (id) => {
+    console.log(id);
     const action = {
-        type: REMOVE_JOB,
+        type: VIEW_JOB,
         id
     };
     return action;
