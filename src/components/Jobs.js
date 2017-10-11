@@ -81,7 +81,7 @@ class AddJobs extends Component {
                     <div className="title">
                         Add New Item
                     </div>
-                    <div className="form-inline job-form container">
+                    <div className="container">
                         <div className="form-group">
                             <div className="row">
                                 <div className="col">
