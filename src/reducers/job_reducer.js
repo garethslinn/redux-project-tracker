@@ -16,8 +16,8 @@ const job = (action) => {
     }
 };
 
-const removeById = (state = [], id) => {
-    const jobs = state.filter(jobs => job.id !== id);
+const remove = (state = [], id) => {
+    const jobs = state.filter(job => job.id !== id);
     console.log('new reduced jobs ' , jobs );
     return jobs;
 };
@@ -32,7 +32,7 @@ const jobs = (state = [], action) => {
             console.log('reducers jobs ', jobs);
             return jobs;
         case REMOVE_JOB:
-            jobs = removeById(state, action.id);
+            jobs = remove(state, action.id);
             bake_cookie('jobs', jobs);
             return jobs;
         default:
