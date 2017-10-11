@@ -8,7 +8,10 @@ class Nav extends Component {
                     <a className="nav-link active" href="/">Add Users</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="/addSprint">Add Sprints</a>
+                    <a className="nav-link" href="/sprint">Add Sprints</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="/jobs">Add new item</a>
                 </li>
             </ul>
         )

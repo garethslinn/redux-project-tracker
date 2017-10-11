@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addSprint } from "../actions/addSprint_action";
+import { addSprint } from "../actions/sprint_action";
 import Nav from './Nav';
 
 class AddSprint extends Component {
@@ -19,7 +19,7 @@ class AddSprint extends Component {
             this.state.startDate,
             this.state.endDate
         );
-        console.log('state1 ', this.state);
+        console.log('add sprint state ', this.state);
     }
 
     renderSprints() {
