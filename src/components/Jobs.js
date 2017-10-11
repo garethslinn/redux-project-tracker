@@ -39,7 +39,6 @@ class AddJobs extends Component {
 
     handle_assigned() {
         const  { jobs } = this.props;
-        console.log('users == ', jobs);
         return (
             <select className="form-select" onChange={event => this.setState({assigned: event.target.value})}>
                 <option value="">Assigned To</option>
@@ -50,6 +49,22 @@ class AddJobs extends Component {
                     )
                 })
             }
+            </select>
+        )
+    }
+
+    handle_sprint() {
+        const  { jobs } = this.props;
+        return (
+            <select className="form-select" onChange={event => this.setState({sprint: event.target.value})}>
+                <option value="">Sprint</option>
+                {
+                    jobs.addSprint.map(sprint => {
+                        return (
+                            <option key={sprint.id} value={sprint.sprint}>{sprint.sprint}</option>
+                        )
+                    })
+                }
             </select>
         )
     }
@@ -109,6 +124,23 @@ class AddJobs extends Component {
                                         onChange={event => this.setState({title: event.target.value})}
                                     />
 
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col">
+
+                                    <textarea
+                                        className="description"
+                                        rows="4"
+                                        placeholder="Description"
+                                        onChange={event => this.setState({description: event.target.value})}>
+
+                                    </textarea>
+
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col">
                                     <select className="form-select" onChange={event => this.setState({jobType: event.target.value})}>
                                         <option value="">Job Type</option>
                                         <option value="Task">Task</option>
@@ -134,12 +166,11 @@ class AddJobs extends Component {
                                         <option value="Management">Management</option>
                                         <option value="Other">Other</option>
                                     </select>
-                                    <input
-                                        className="form-control"
-                                        placeholder="sprint"
-                                        type="text"
-                                        onChange={event => this.setState({sprint: event.target.value})}
-                                    />
+
+                                    {this.handle_sprint()}
+
+                                </div>
+                                <div className="col">
 
                                     <select className="form-select" onChange={event => this.setState({stat: event.target.value})}>
                                         <option value="">Status</option>
@@ -153,14 +184,6 @@ class AddJobs extends Component {
                                         <option value="Out of scope">Out of scope</option>
                                     </select>
 
-                                </div>
-                                <div className="col">
-                                    <input
-                                        className="form-control"
-                                        placeholder="description"
-                                        type="text"
-                                        onChange={event => this.setState({description: event.target.value})}
-                                    />
                                     <input
                                         className="form-control"
                                         placeholder="linked"
@@ -173,7 +196,7 @@ class AddJobs extends Component {
                                         type="button"
                                         className="btn btn-success"
                                         onClick={ () => this.addJob() }>
-                                        Add
+                                        Add User
                                     </button>
                             </div>
 

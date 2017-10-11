@@ -45,3 +45,16 @@ input {
     border: 1px solid rgba(0,0,0,.15);
     border-radius: 0;
 }
+
+.description {
+    margin-left: 5px;
+    width: 100%;
+    border-radius: .25rem;
+    border: 1px solid rgba(0,0,0,.15);
+    padding: .5rem .75rem;
+    color: #495057;
+}
+
+select, input, textarea, button {
+    outline: none;
+}
