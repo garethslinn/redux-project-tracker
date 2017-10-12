@@ -24,7 +24,7 @@ class ViewJobs extends Component {
     getView() {
         let id = parseFloat(window.location.search.substring(1));
         let { jobs } = this.props;
-        jobs = jobs.addJob.filter(function(job, i, array) {
+        jobs = jobs.addJob.filter(function(job) {
                 return job.id === id;
             }
         );
@@ -34,15 +34,91 @@ class ViewJobs extends Component {
                 {
                     jobs.map(job => {
                         return (
-                            <div className="row">
+                            <div className="row" key={job.id}>
                                 <div className="col">
                                     <input
                                         className="form-control"
                                         placeholder="Title"
                                         type="text"
-                                        value={job.title}
+                                        defaultValue={job.title}
                                         onChange={event => this.setState({title: event.target.value})}
                                     />
+                                    <div className="row">
+                                        <div className="col">
+
+                                    <textarea
+                                        className="description"
+                                        rows="4"
+                                        placeholder="Description"
+                                        defaultValue={ job.description }
+                                        onChange={event => this.setState({description: event.target.value})}>
+
+                                    </textarea>
+
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col">
+                                            <select className="form-select" onChange={event => this.setState({jobType: event.target.value})}>
+                                                <option value={ job.jobType }>{ job.jobType }</option>
+                                                <option value="Task">Task</option>
+                                                <option value="Defect">Defect</option>
+                                                <option value="Epic">Epic</option>
+                                                <option value="Spike">Spike</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+
+                                            {this.handle_assigned(job.assigned)}
+
+                                        </div>
+                                        <div className="col">
+
+                                            <select className="form-select" onChange={event => this.setState({role: event.target.value})}>
+                                                <option value={ job.role }>{ job.role }</option>
+                                                <option value="Front End">Front End</option>
+                                                <option value="Back End">Back End</option>
+                                                <option value="Tester">Tester</option>
+                                                <option value="Operations">Operation</option>
+                                                <option value="Creative">Creative</option>
+                                                <option value="UX">User Experience</option>
+                                                <option value="Management">Management</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+
+                                            { this.handle_sprint(job.sprint) }
+
+
+                                        </div>
+                                        <div className="col">
+
+                                            <select className="form-select" onChange={event => this.setState({stat: event.target.value})}>
+                                                <option value={ job.stat }>{ job.stat }</option>
+                                                <option value="To do">To do</option>
+                                                <option value="In Progress">In Progress</option>
+                                                <option value="Deploy to test">Deploy to test</option>
+                                                <option value="Testing">Testing</option>
+                                                <option value="Done">Done</option>
+                                                <option value="Blocked">Blocked</option>
+                                                <option value="Rejected">Rejected</option>
+                                                <option value="Out of scope">Out of scope</option>
+                                            </select>
+
+                                            <input
+                                                className="form-control"
+                                                placeholder="linked"
+                                                defaultValue={job.linked}
+                                                type="text"
+                                                onChange={event => this.setState({linked: event.target.value})}
+                                            />
+                                        </div>
+
+                                        <button
+                                            type="button"
+                                            className="btn btn-success"
+                                            onClick={ () => this.addJob() }>
+                                            Edit User
+                                        </button>
+                                    </div>
 
                                 </div>
                             </div>
@@ -68,11 +144,11 @@ class ViewJobs extends Component {
         console.log('addJob component state ', this.state);
     }
 
-    handle_assigned() {
+    handle_assigned(currentAssigned) {
         const  { jobs } = this.props;
         return (
             <select className="form-select" onChange={event => this.setState({assigned: event.target.value})}>
-                <option value="">Assigned To</option>
+                <option value={currentAssigned}>{currentAssigned}</option>
                 {
                     jobs.addUser.map(user => {
                         return (
@@ -84,71 +160,22 @@ class ViewJobs extends Component {
         )
     }
 
-    handle_sprint() {
+    handle_sprint(currentSprint) {
         const  { jobs } = this.props;
         return (
             <select className="form-select" onChange={event => this.setState({sprint: event.target.value})}>
-                <option value="">Sprint</option>
+                <option value={currentSprint}>{currentSprint}</option>
+
+
                 {
                     jobs.addSprint.map(sprint => {
                         return (
-                            <div>
                             <option key={sprint.id} value={sprint.sprint}>{sprint.sprint}</option>
-                                <div className="row">
-                                    <div className="col">
-                                        <input
-                                            className="form-control"
-                                            placeholder="Title"
-                                            type="text"
-                                            onChange={event => this.setState({title: event.target.value})}
-                                        />
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-
                         )
                     })
                 }
             </select>
-        )
-    }
 
-
-    renderJobs() {
-        const  { jobs }  = this.props;
-        console.log('jobs == ', jobs);
-        return (
-
-            <tbody>
-            {
-                jobs.addJob.map(job => {
-                    return (
-                        <tr key={job.id}>
-                            <td>{ job.title }</td>
-                            <td>{ job.jobType}</td>
-                            <td>{ job.assigned }</td>
-                            <td>{ job.role }</td>
-                            <td>{ job.sprint }</td>
-                            <td>{ job.stat }</td>
-                            <td>{ job.description }</td>
-                            <td>{ job.linked }</td>
-                            <td>
-
-
-                                <a
-                                    href={`/views?${ job.id }`}>
-                                    View
-                                </a>
-                            </td>
-                        </tr>
-
-                    )
-                })
-            }
-            </tbody>
         )
     }
 
@@ -166,103 +193,8 @@ class ViewJobs extends Component {
 
                             { this.getView() }
 
-
-                            <div className="row">
-                                <div className="col">
-
-                                    <textarea
-                                        className="description"
-                                        rows="4"
-                                        placeholder="Description"
-                                        onChange={event => this.setState({description: event.target.value})}>
-
-                                    </textarea>
-
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <select className="form-select" onChange={event => this.setState({jobType: event.target.value})}>
-                                        <option value="">Job Type</option>
-                                        <option value="Task">Task</option>
-                                        <option value="Defect">Defect</option>
-                                        <option value="Epic">Epic</option>
-                                        <option value="Spike">Spike</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-
-                                    {this.handle_assigned()}
-
-                                </div>
-                                <div className="col">
-
-                                    <select className="form-select" onChange={event => this.setState({role: event.target.value})}>
-                                        <option value="">Role</option>
-                                        <option value="Front Ennd">Front End</option>
-                                        <option value="Back End">Back End</option>
-                                        <option value="Tester">Tester</option>
-                                        <option value="Operations">Operation</option>
-                                        <option value="Creative">Creative</option>
-                                        <option value="UX">User Experience</option>
-                                        <option value="Management">Management</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-
-                                    {this.handle_sprint()}
-
-                                </div>
-                                <div className="col">
-
-                                    <select className="form-select" onChange={event => this.setState({stat: event.target.value})}>
-                                        <option value="">Status</option>
-                                        <option value="To do">To do</option>
-                                        <option value="In Progress">In Progress</option>
-                                        <option value="Deploy to test">Deploy to test</option>
-                                        <option value="Testing">Testing</option>
-                                        <option value="Done">Done</option>
-                                        <option value="Blocked">Blocked</option>
-                                        <option value="Rejected">Rejected</option>
-                                        <option value="Out of scope">Out of scope</option>
-                                    </select>
-
-                                    <input
-                                        className="form-control"
-                                        placeholder="linked"
-                                        type="text"
-                                        onChange={event => this.setState({view: event.target.value})}
-                                    />
-                                </div>
-
-                                <button
-                                    type="button"
-                                    className="btn btn-success"
-                                    onClick={ () => this.addJob() }>
-                                    Add User
-                                </button>
-                            </div>
-
                         </div>
                     </div>
-
-                    <div className="container">
-                        <table className="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Job Type</th>
-                                <th>Assigned</th>
-                                <th>Role</th>
-                                <th>Sprint</th>
-                                <th>Status</th>
-                                <th>Description</th>
-                                <th>Linked</th>
-                            </tr>
-                            </thead>
-                            { this.renderJobs() }
-
-                        </table>
-                    </div>
-
 
                 </div>
             </div>

@@ -156,7 +156,7 @@ class AddJobs extends Component {
 
                                     <select className="form-select" onChange={event => this.setState({role: event.target.value})}>
                                         <option value="">Role</option>
-                                        <option value="Front Ennd">Front End</option>
+                                        <option value="Front End">Front End</option>
                                         <option value="Back End">Back End</option>
                                         <option value="Tester">Tester</option>
                                         <option value="Operations">Operation</option>
@@ -187,7 +187,7 @@ class AddJobs extends Component {
                                         className="form-control"
                                         placeholder="linked"
                                         type="text"
-                                        onChange={event => this.setState({view: event.target.value})}
+                                        onChange={event => this.setState({linked: event.target.value})}
                                     />
                                     </div>
 
