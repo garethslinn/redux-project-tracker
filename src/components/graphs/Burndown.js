@@ -19,6 +19,7 @@ export default class Demo extends Component {
     render () {
         return (
             <div className="line-charts">
+                <div className="title">Burn down</div>
                 <div className="composed-chart-wrapper">
                     <ResponsiveContainer width="100%" height={300}>
                         <ComposedChart width={800} height={400} data={data}

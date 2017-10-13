@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addSprint, removeSprint } from "../actions/sprint_action";
 import Nav from './Nav';
+import Header from './global/Header';
+import Footer from './global/Footer';
 
 class AddSprint extends Component {
     constructor(props) {
@@ -56,7 +58,8 @@ class AddSprint extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
+                <Header />
             <Nav />
             <form className="UsersTable">
                 <div className="title">
@@ -113,6 +116,7 @@ class AddSprint extends Component {
                 </div>
 
             </form>
+                <Footer />
             </div>
         )
     }

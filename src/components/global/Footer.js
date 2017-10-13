@@ -1,10 +1,11 @@
+
 import React, { Component } from 'react';
 
-class Nav extends Component {
+class Footer extends Component {
     render() {
         return (
             <nav>
-                <ul className="nav">
+                <ul className="nav footer">
                     <li className="nav-item">
                         <a className="nav-link active" href="/">Add Users</a>
                     </li>
@@ -20,9 +21,7 @@ class Nav extends Component {
                 </ul>
             </nav>
         )
-
     }
 }
 
-export default Nav;
-
+export default Footer;

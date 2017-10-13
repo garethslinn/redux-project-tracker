@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addJob } from "../actions/job_action";
+import Header from './global/Header';
+import Footer from './global/Footer';
 
 
 import Nav from './Nav';
@@ -106,13 +108,14 @@ class AddJobs extends Component {
 
     render() {
         return(
-            <div>
+            <div className="container">
+                <Header />
                 <Nav />
                 <div className="UsersTable">
                     <div className="title">
                         Add New Item
                     </div>
-                    <div className="container">
+                    <div>
                         <div className="form-group">
                             <div className="row">
                                 <div className="col">
@@ -223,6 +226,7 @@ class AddJobs extends Component {
 
 
                 </div>
+                <Footer />
             </div>
         )
     }
