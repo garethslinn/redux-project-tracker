@@ -182,7 +182,7 @@ class ViewJobs extends Component {
 
     render() {
         return(
-            <div>
+            <div className="container">
                 <Header />
                 <Nav />
                 <div className="UsersTable">
