@@ -13,6 +13,9 @@ class Nav extends Component {
                 <li className="nav-item">
                     <a className="nav-link" href="/jobs">Add new item</a>
                 </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="/tracking">Tracking</a>
+                </li>
             </ul>
         )
     }

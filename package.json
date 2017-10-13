@@ -9,6 +9,7 @@
     "react-redux": "^5.0.6",
     "react-router": "^3.0.1",
     "react-scripts": "1.0.14",
+    "recharts": "^1.0.0-alpha.6",
     "redux": "^3.7.2",
     "sfcookies": "^1.0.2"
   },

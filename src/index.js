@@ -5,6 +5,7 @@ import Jobs from './components/Jobs';
 import Users from './components/Users';
 import Sprint from './components/Sprint';
 import Views from './components/Views';
+import Tracking from './components/Tracking';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from'./reducers';
@@ -19,6 +20,7 @@ ReactDom.render(
             <Route path='/sprint' component={Sprint} />
             <Route path='/jobs' component={Jobs} />
             <Route path='/views' component={Views} />
+            <Route path='/tracking' component={Tracking} />
         </Router>
     </Provider>,
     document.getElementById('root')
