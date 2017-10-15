@@ -51,7 +51,7 @@ class AddUsers extends Component {
                                 <td>{ user.active }</td>
                                 <td><button
                                     type="button"
-                                    className="btn btn-success"
+                                    className="btn btn-danger"
                                     onClick={ () => this.removeUser(user.id) }>
                                     Remove
                                 </button>
@@ -123,7 +123,7 @@ class AddUsers extends Component {
                 </div>
 
                  <div className="container">
-                    <table className="table table-striped">
+                    <table className="table table-striped table-responsive">
                         <thead>
                         <tr>
                             <th>First Name</th>

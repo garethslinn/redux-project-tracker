@@ -1,0 +1,42 @@
+[debug] [2017-10-15T11:19:11.523Z] ----------------------------------------------------------------------
+[debug] [2017-10-15T11:19:11.525Z] Command:       /usr/local/Cellar/node/8.1.2/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-10-15T11:19:11.525Z] CLI Version:   3.13.1
+[debug] [2017-10-15T11:19:11.526Z] Platform:      darwin
+[debug] [2017-10-15T11:19:11.526Z] Node Version:  v8.1.2
+[debug] [2017-10-15T11:19:11.526Z] Time:          Sun Oct 15 2017 12:19:11 GMT+0100 (BST)
+[debug] [2017-10-15T11:19:11.526Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-15T11:19:11.547Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-15T11:19:11.547Z] > authorizing via signed-in user
+[debug] [2017-10-15T11:19:11.549Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-10-15T11:19:11.549Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/YYCbxFfZwTXwmBKuorzJT0-AGu6YDNyn8078YsVi-CI',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Oct 15 2017 12:19:11 GMT+0100 (BST)
+[debug] [2017-10-15T11:19:11.787Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-15T11:19:11.803Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tracker-a3d83  
+ Sun Oct 15 2017 12:19:11 GMT+0100 (BST)
+[debug] [2017-10-15T11:19:12.581Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-15T11:19:12.582Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tracker-a3d83/tokens  
+ Sun Oct 15 2017 12:19:12 GMT+0100 (BST)
+[debug] [2017-10-15T11:19:13.343Z] <<< HTTP RESPONSE 200
+[info] 2
+[info] 
+[info] === Deploying to 'tracker-a3d83'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2017-10-15T11:19:14.684Z] >>> HTTP REQUEST PUT https://tracker-a3d83.firebaseio.com/.settings/rules.json?dryRun=true {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+} 
+ Sun Oct 15 2017 12:19:14 GMT+0100 (BST)
+[debug] [2017-10-15T11:19:15.308Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax is valid
+[info] i  hosting: preparing firebase directory for upload...
+[debug] [2017-10-15T11:19:16.223Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/tracker-a3d83/uploads/-KwUk_WizzHbE8Fq5_gY?fileCount=15&message=  
+ Sun Oct 15 2017 12:19:16 GMT+0100 (BST)

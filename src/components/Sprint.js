@@ -39,7 +39,7 @@ class AddSprint extends Component {
                             <td>{ sprint.endDate }</td>
                             <td><button
                                 type="button"
-                                className="btn btn-success"
+                                className="btn btn-danger"
                                 onClick={ () => this.removeSprint(sprint.id) }>
                                 Remove
                             </button>
@@ -103,7 +103,7 @@ class AddSprint extends Component {
                 </div>
 
                 <div className="container">
-                    <table className="table table-striped">
+                    <table className="table table-striped table-responsive">
                         <thead>
                         <tr>
                             <th>Sprints</th>

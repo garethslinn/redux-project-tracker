@@ -206,7 +206,7 @@ class AddJobs extends Component {
                     </div>
 
                     <div className="container">
-                        <table className="table table-striped">
+                        <table className="table table-striped table-responsive">
                             <thead>
                             <tr>
                                 <th>Title</th>
