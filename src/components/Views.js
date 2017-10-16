@@ -61,7 +61,7 @@ class ViewJobs extends Component {
                                         className="form-control"
                                         placeholder="jobNo"
                                         type="text"
-                                        value={ this.getJobNo() }
+                                        value={ job.jobNo }
                                         readOnly={true}
                                     />
                                     <input
