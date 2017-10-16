@@ -25,8 +25,6 @@ class AddJobs extends Component {
         }
     }
 
-
-
     addJob(no) {
         this.props.addJob(
             this.state.jobNo + 1,

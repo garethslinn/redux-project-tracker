@@ -12,7 +12,7 @@ class ViewJobs extends Component {
         const view = this.getJob();
         view.map(job => {
             this.state = {
-                id: job.id,
+                jobNo: job.jobNo,
                 title: job.title,
                 jobType: job.jobType,
                 assigned: job.assigned,
@@ -39,6 +39,10 @@ class ViewJobs extends Component {
         return jobs;
     }
 
+    getJobNo() {
+        const  { jobs }  = this.props;
+        return jobs.addJob.length + 1;
+    }
 
     getView() {
 
@@ -53,6 +57,13 @@ class ViewJobs extends Component {
 
                             <div className="row" key={job.id} >
                                 <div className="col">
+                                    <input
+                                        className="form-control"
+                                        placeholder="jobNo"
+                                        type="text"
+                                        value={ this.getJobNo() }
+                                        readOnly={true}
+                                    />
                                     <input
                                         className="form-control"
                                         placeholder="Title"
@@ -150,6 +161,7 @@ class ViewJobs extends Component {
 
     editJob() {
         this.props.editJob(
+            this.state.jobNo,
             this.state.title,
             this.state.jobType,
             this.state.assigned,

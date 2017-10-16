@@ -17,9 +17,10 @@ export const addJob = (jobNo, title, jobType, assigned, role, sprint, stat, desc
     return action;
 };
 
-export const editJob = (title, jobType, assigned, role, sprint, stat, description, linked) => {
+export const editJob = (jobNo, title, jobType, assigned, role, sprint, stat, description, linked) => {
     const action = {
         type: EDIT_JOB,
+        jobNo,
         title,
         jobType,
         assigned,
