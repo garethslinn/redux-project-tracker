@@ -11,7 +11,7 @@ class AddJobs extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            view: '',
+            jobNo: '',
             title: '',
             jobType: '',
             assigned: '',
@@ -23,8 +23,12 @@ class AddJobs extends Component {
         }
     }
 
+
+
     addJob() {
+        this.setState({ jobNo: this.getJobNo()});
         this.props.addJob(
+            this.state.jobNo+1,
             this.state.title,
             this.state.jobType,
             this.state.assigned,
@@ -69,10 +73,16 @@ class AddJobs extends Component {
         )
     }
 
+    getJobNo() {
+        const  { jobs }  = this.props;
+        return jobs.addJob.length + 1;
+    }
+
 
     renderJobs() {
         const  { jobs }  = this.props;
         console.log('jobs == ', jobs);
+
         return (
 
             <tbody>
@@ -80,6 +90,7 @@ class AddJobs extends Component {
                 jobs.addJob.map(job => {
                     return (
                         <tr key={job.id}>
+                            <td>{ job.jobNo }</td>
                             <td>{ job.title }</td>
                             <td>{ job.jobType}</td>
                             <td>{ job.assigned }</td>
@@ -107,6 +118,7 @@ class AddJobs extends Component {
 
 
     render() {
+
         return(
             <div className="container">
                 <Header />
@@ -119,6 +131,13 @@ class AddJobs extends Component {
                         <div className="form-group">
                             <div className="row">
                                 <div className="col">
+                                    <input
+                                        className="form-control"
+                                        placeholder="jobNo"
+                                        type="text"
+                                        value={ this.getJobNo() }
+                                        readOnly={true}
+                                    />
                                     <input
                                         className="form-control"
                                         placeholder="Title"
@@ -194,6 +213,8 @@ class AddJobs extends Component {
                                     />
                                     </div>
 
+
+
                                     <button
                                         type="button"
                                         className="btn btn-success"
@@ -209,6 +230,7 @@ class AddJobs extends Component {
                         <table className="table table-striped table-responsive">
                             <thead>
                             <tr>
+                                <th>JobNo</th>
                                 <th>Title</th>
                                 <th>Job Type</th>
                                 <th>Assigned</th>
@@ -220,6 +242,7 @@ class AddJobs extends Component {
                             </tr>
                             </thead>
                             { this.renderJobs() }
+
 
                         </table>
                     </div>

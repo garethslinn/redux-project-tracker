@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addJob } from "../actions/job_action";
+import { editJob } from "../actions/job_action";
 import Header from './global/Header';
 import Footer from './global/Footer';
 import Nav from './Nav';
@@ -8,33 +8,50 @@ import Nav from './Nav';
 class ViewJobs extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            view: '',
-            title: '',
-            jobType: '',
-            assigned: '',
-            role: '',
-            sprint: '',
-            stat: '',
-            description: '',
-            linked: ''
-        }
+
+        const view = this.getJob();
+        view.map(job => {
+            this.state = {
+                id: job.id,
+                title: job.title,
+                jobType: job.jobType,
+                assigned: job.assigned,
+                role: job.role,
+                sprint: job.sprint,
+                stat: job.stat,
+                description: job.description,
+                linked: job.linked
+            }
+        });
+
+        console.log(this.state)
     }
 
-    getView() {
+
+    getJob() {
         let id = parseFloat(window.location.search.substring(1));
         let { jobs } = this.props;
+
         jobs = jobs.addJob.filter(function(job) {
-                return job.id === id;
-            }
-        );
+            return job.id === id;
+        });
+
+        return jobs;
+    }
+
+
+    getView() {
+
+        let jobs = this.getJob();
 
         return (
             <div>
                 {
                     jobs.map(job => {
+
                         return (
-                            <div className="row" key={job.id}>
+
+                            <div className="row" key={job.id} >
                                 <div className="col">
                                     <input
                                         className="form-control"
@@ -115,13 +132,14 @@ class ViewJobs extends Component {
                                         <button
                                             type="button"
                                             className="btn btn-success"
-                                            onClick={ () => this.addJob() }>
+                                            onClick={ () => this.editJob() }>
                                             Edit User
                                         </button>
                                     </div>
 
                                 </div>
                             </div>
+
                         )
                     })
                 }
@@ -130,8 +148,8 @@ class ViewJobs extends Component {
         )
     }
 
-    addJob() {
-        this.props.addJob(
+    editJob() {
+        this.props.editJob(
             this.state.title,
             this.state.jobType,
             this.state.assigned,
@@ -141,18 +159,20 @@ class ViewJobs extends Component {
             this.state.description,
             this.state.linked
         );
-        console.log('addJob component state ', this.state);
+
     }
 
     handle_assigned(currentAssigned) {
         const  { jobs } = this.props;
+
         return (
-            <select className="form-select" onChange={event => this.setState({assigned: event.target.value})}>
+            <select className="form-select" onChange={event => this.setState({assigned: event.target.value}) || currentAssigned}>
                 <option value={currentAssigned}>{currentAssigned}</option>
                 {
                     jobs.addUser.map(user => {
                         return (
                             <option key={user.id} value={user.firstName}>{user.firstName}</option>
+
                         )
                     })
                 }
@@ -211,5 +231,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { addJob })(ViewJobs);
+export default connect(mapStateToProps, { editJob })(ViewJobs);
 
