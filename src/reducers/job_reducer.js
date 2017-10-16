@@ -29,33 +29,15 @@ const jobs = (state = [], action) => {
         case EDIT_JOB:
             jobs = [...state];
 
-            //let existing = jobs.find(job => job.jobNo === action.jobNo);
-/*
-            for (let job of jobs) {
-                if(job.jobNo === action.jobNo) {
-                    job === action
-                }
-            }
-            */
             let i=0;
-
-            for (i; i <= jobs.length; i++ ) {
-                console.log('0. JOBI',jobs[i]);
-                console.log(jobs[i].title);
-                if(job.jobNo === action.jobNo) {
-
-                    jobs[i].title === action.title
+            console.log('ID',jobs[i].id)
+            for( i in jobs) {
+                if(jobs[i].jobNo === action.jobNo) {
+                    action.id = jobs[i].id;
+                    jobs[i] = action;
                     console.log('UPDATED')
-                } else {
-                    console.log('No MATCH')
                 }
             }
-
-
-                console.log('1. action', action.title);
-
-                console.log('2. JOBS ',jobs);
-
 
             bake_cookie('jobs', jobs);
             console.log('3. reducers EDIT jobs ', jobs);
