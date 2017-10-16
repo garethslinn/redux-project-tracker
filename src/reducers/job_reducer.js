@@ -24,23 +24,17 @@ const jobs = (state = [], action) => {
         case ADD_JOB:
             jobs = [...state, job(action)];
             bake_cookie('jobs', jobs);
-            console.log('reducers jobs ', jobs);
             return jobs;
         case EDIT_JOB:
             jobs = [...state];
-
             let i=0;
-            console.log('ID',jobs[i].id)
             for( i in jobs) {
                 if(jobs[i].jobNo === action.jobNo) {
                     action.id = jobs[i].id;
                     jobs[i] = action;
-                    console.log('UPDATED')
                 }
             }
-
             bake_cookie('jobs', jobs);
-            console.log('3. reducers EDIT jobs ', jobs);
             return jobs;
         default:
             return state;

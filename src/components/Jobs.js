@@ -11,7 +11,6 @@ class AddJobs extends Component {
     constructor(props) {
         super(props);
         const checkJobsExist = this.getJobNo()-1;
-        console.log('checkJobsExist',checkJobsExist);
         this.state = {
             jobNo: checkJobsExist ? this.getJobNo() : 0,
             title: '',
@@ -38,8 +37,6 @@ class AddJobs extends Component {
             this.state.linked
         );
         this.setState({ jobNo: no });
-        console.log('JOB NO', this.state.jobNo, no);
-        console.log('addJob component state ', this.state);
     }
 
     handle_assigned() {
@@ -82,8 +79,6 @@ class AddJobs extends Component {
 
     renderJobs() {
         const  { jobs }  = this.props;
-        console.log('jobs == ', jobs);
-
         return (
 
             <tbody>

@@ -15,7 +15,6 @@ const user = (action) => {
 
 const remove = (state = [], id) => {
     const users = state.filter(user => user.id !== id);
-    console.log('new reduced users ' , users );
     return users;
 };
 
@@ -26,7 +25,6 @@ const users = (state = [], action) => {
         case ADD_USER:
             users = [...state, user(action)];
             bake_cookie('users', users);
-            console.log('reducers users ', users);
             return users;
         case REMOVE_USER:
             users = remove(state, action.id);

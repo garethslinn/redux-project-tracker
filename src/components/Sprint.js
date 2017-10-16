@@ -21,12 +21,10 @@ class AddSprint extends Component {
             this.state.startDate,
             this.state.endDate
         );
-        console.log('add sprint state ', this.state);
     }
 
     renderSprints() {
         const  { sprints }  = this.props;
-        console.log('sprints == ', sprints.addSprint);
         return (
 
             <tbody>

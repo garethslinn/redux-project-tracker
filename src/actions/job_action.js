@@ -13,7 +13,6 @@ export const addJob = (jobNo, title, jobType, assigned, role, sprint, stat, desc
         description,
         linked
     };
-    console.log('action in addJob', action);
     return action;
 };
 
@@ -30,7 +29,6 @@ export const editJob = (jobNo, title, jobType, assigned, role, sprint, stat, des
         description,
         linked
     };
-    console.log('action in editJob', action);
     return action;
 };
 

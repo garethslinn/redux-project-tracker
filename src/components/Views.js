@@ -23,8 +23,6 @@ class ViewJobs extends Component {
                 linked: job.linked
             }
         });
-
-        console.log(this.state)
     }
 
 

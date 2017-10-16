@@ -23,7 +23,6 @@ const sprints = (state = [], action) => {
         case ADD_SPRINT:
             sprints = [...state, sprint(action)];
             bake_cookie('sprints', sprints);
-            console.log('returning sprints ', sprints);
             return sprints;
         case REMOVE_SPRINT:
             sprints = remove(state, action.id);

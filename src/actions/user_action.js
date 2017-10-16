@@ -9,7 +9,6 @@ export const addUser = (firstName, secondName, email, admin, active) => {
         admin,
         active
     };
-    console.log('action in addUser', action);
     return action;
 };
 
@@ -18,6 +17,5 @@ export const removeUser = (id) => {
         type: REMOVE_USER,
         id
     };
-    console.log('deleting in actions', action);
     return action;
 };

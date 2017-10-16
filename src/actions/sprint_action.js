@@ -7,7 +7,6 @@ export const addSprint = (sprint, startDate, endDate) => {
         startDate,
         endDate
     };
-    console.log('action in addSprint', action);
     return action;
 };
 
