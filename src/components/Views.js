@@ -33,7 +33,7 @@ class ViewJobs extends Component {
         let { jobs } = this.props;
 
         jobs = jobs.addJob.filter(function(job) {
-            return job.id === id;
+            return job.jobNo === id;
         });
 
         return jobs;

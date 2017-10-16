@@ -104,7 +104,7 @@ class AddJobs extends Component {
 
 
                                 <a
-                                    href={`/views?${ job.id }`}>
+                                    href={`/views?${ job.jobNo }`}>
                                     View
                                 </a>
                             </td>
