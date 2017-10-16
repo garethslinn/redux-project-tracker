@@ -10,8 +10,10 @@ import Nav from './Nav';
 class AddJobs extends Component {
     constructor(props) {
         super(props);
+        const checkJobsExist = this.getJobNo()-1;
+        console.log('checkJobsExist',checkJobsExist);
         this.state = {
-            jobNo: '',
+            jobNo: checkJobsExist ? this.getJobNo() : 0,
             title: '',
             jobType: '',
             assigned: '',
@@ -25,10 +27,9 @@ class AddJobs extends Component {
 
 
 
-    addJob() {
-        this.setState({ jobNo: this.getJobNo()});
+    addJob(no) {
         this.props.addJob(
-            this.state.jobNo+1,
+            this.state.jobNo + 1,
             this.state.title,
             this.state.jobType,
             this.state.assigned,
@@ -38,6 +39,8 @@ class AddJobs extends Component {
             this.state.description,
             this.state.linked
         );
+        this.setState({ jobNo: no });
+        console.log('JOB NO', this.state.jobNo, no);
         console.log('addJob component state ', this.state);
     }
 
@@ -218,7 +221,7 @@ class AddJobs extends Component {
                                     <button
                                         type="button"
                                         className="btn btn-success"
-                                        onClick={ () => this.addJob() }>
+                                        onClick={ () => this.addJob(this.getJobNo()) }>
                                         Add User
                                     </button>
                             </div>
