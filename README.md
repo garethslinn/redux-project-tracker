@@ -30,6 +30,8 @@ Sync data with firebase
 
 Fix sign out button defect on sign in page
 
+Fix EDIT_JOB entry into id
+
 Apply an admin area and resctrict only to admin
 
 Brand Tracker and overhaul layout
