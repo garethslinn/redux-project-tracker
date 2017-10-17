@@ -63,31 +63,45 @@ class AddSprint extends Component {
                 <div className="title">
                     Add Sprint
                 </div>
-                <div className="form-inline user-form">
+
                     <div className="form-group">
-                        <input
-                            className="form-control"
-                            placeholder="Sprint."
-                            type="text"
-                            required
-                            onChange={event => this.setState({sprint: event.target.value})}
-                        />
 
-                        <input
-                            className="form-control"
-                            placeholder="Start Date: dd/mm/yyyy"
-                            type="date"
-                            required
-                            onChange={event => this.setState({startDate: event.target.value})}
-                        />
+                        <label for="sprint" className="col-sm-2 col-form-label">Sprint</label>
+                        <div className="col-sm-10">
+                            <input
+                                id="sprint"
+                                className="form-control"
+                                placeholder="Sprint."
+                                type="text"
+                                required
+                                onChange={event => this.setState({sprint: event.target.value})}
+                            />
 
-                        <input
-                            className="form-control"
-                            placeholder="End Date: dd/mm/yyyy"
-                            type="date"
-                            required
-                            onChange={event => this.setState({endDate: event.target.value})}
-                        />
+                        </div>
+
+                        <label for="startDate" className="col-sm-2 col-form-label">Start date</label>
+                        <div className="col-sm-10">
+                            <input
+                                id="startDate"
+                                className="form-control"
+                                placeholder="Start Date: dd/mm/yyyy"
+                                type="date"
+                                required
+                                onChange={event => this.setState({startDate: event.target.value})}
+                            />
+                        </div>
+
+                        <label for="endDate" className="col-sm-2 col-form-label">End date</label>
+                        <div className="col-sm-10">
+                            <input
+                                id="endDate"
+                                className="form-control"
+                                placeholder="Start Date: dd/mm/yyyy"
+                                type="date"
+                                required
+                                onChange={event => this.setState({startDate: event.target.value})}
+                            />
+                        </div>
 
                         <button
                             type="button"
@@ -98,7 +112,7 @@ class AddSprint extends Component {
 
                     </div>
 
-                </div>
+
 
                 <div className="container">
                     <table className="table table-striped table-responsive">
