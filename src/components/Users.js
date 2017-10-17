@@ -68,6 +68,8 @@ class AddUsers extends Component {
 
     render() {
         return(
+
+
             <div className="container">
                 <Header />
                 <Nav />
@@ -75,52 +77,55 @@ class AddUsers extends Component {
                 <div className="title">
                     Add Users
                 </div>
-                <div className="form-inline user-form">
-                    <div className="form-group">
+
+                <div className="form-group row">
+                    <label for="firstName" className="col-sm-2 col-form-label">First Name</label>
+                    <div className="col-sm-10">
                         <input
+                            id="firstName"
                             className="form-control"
                             placeholder="First Name."
                             type="text"
                             onChange={event => this.setState({firstName: event.target.value})}
-                            />
+                        />
+                    </div>
 
+                    <label for="lastName" className="col-sm-2 col-form-label">Last Name</label>
+                    <div className="col-sm-10">
                         <input
+                            id="lastName"
                             className="form-control"
-                            placeholder="Second Name"
+                            placeholder="Last Name"
                             type="text"
                             onChange={event => this.setState({secondName: event.target.value})}
                         />
+                    </div>
 
+                    <label for="email" className="col-sm-2 col-form-label">Email</label>
+                    <div className="col-sm-10">
                         <input
+                            id="email"
                             className="form-control"
-                            placeholder="email"
-                            type="email"
+                            placeholder="Email"
+                            type="text"
                             onChange={event => this.setState({email: event.target.value})}
                         />
-                        <label>Admin</label>
-                        <input
-                            className="form-control"
-                            placeholder="admin"
-                            type="checkbox"
-                            onChange={event => this.setState({admin: event.target.value})}
-                        />
-                        <label>Active</label>
-                        <input
-                            className="form-control"
-                            placeholder="active"
-                            type="checkbox"
-                            onChange={event => this.setState({active: event.target.value})}
-                        />
-
-                        <button
-                            type="button"
-                            className="btn btn-success"
-                            onClick={ () => this.addUser() }>
-                            Add User
-                        </button>
-
                     </div>
+
+
                 </div>
+
+                <div className="form-group">
+
+                    <button
+                        type="button"
+                        className="btn btn-success"
+                        onClick={ () => this.addUser() }>
+                        Add User
+                    </button>
+
+                </div>
+
 
                  <div className="container">
                     <table className="table table-striped table-responsive">

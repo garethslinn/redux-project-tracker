@@ -1,7 +1,8 @@
 .UsersTable {
     padding-top: 20px;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 100px;
+    display: block;
+    flex-direction: row;
     align-items: center;
 }
 
