@@ -23,6 +23,7 @@ class Search extends Component {
             <div className="container">
                 <Header />
                 <Nav />
+                <h1>Search jobs</h1>
                 <SearchTable searchPrompt="Type to search" rows={rows}/>
                 <Footer />
             </div>

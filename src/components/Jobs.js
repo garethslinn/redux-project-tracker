@@ -149,6 +149,7 @@ class AddJobs extends Component {
                             </div>
 
                             <label for="title" className="col-sm-2 col-form-label">Title</label>
+
                             <div className="col-sm-10">
                                 <input
                                     id="title"
@@ -263,7 +264,6 @@ class AddJobs extends Component {
                             </tr>
                             </thead>
                             { this.renderJobs() }
-
 
                         </table>
                     </div>
