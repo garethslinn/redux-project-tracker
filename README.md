@@ -18,15 +18,21 @@ A very simplified project tracker using React with Redux
 
 <del>Allow each job its own veiw</del>
 
-Search jobs
+<del>Improve UI</del>
+
+<del>Add log in screen</del>
+
+<del>Apply log out</del>
+
+<del>Search jobs</del>
 
 Sync data with firebase
 
-Improve UI
-
-Add log in screen
+Fix sign out button defect on sign in page
 
 Apply an admin area and resctrict only to admin
+
+Brand Tracker and overhaul layout
 
 
 ## To start
