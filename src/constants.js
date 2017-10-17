@@ -6,3 +6,4 @@ export const REMOVE_JOB = 'REMOVE_JOB';
 export const REMOVE_SPRINT = 'REMOVE_SPRINT';
 export const VIEW_JOB = 'VIEW_JOB';
 export const EDIT_JOB = 'EDIT_JOB';
+export const SIGNED_IN = 'SIGNED_IN';

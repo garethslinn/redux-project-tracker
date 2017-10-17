@@ -20,7 +20,6 @@ class Nav extends Component {
                     <li className="nav-item">
                         <a className="nav-link" href="/search">Search jobs</a>
                     </li>
-
                 </ul>
             </nav>
         )

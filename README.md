@@ -42,6 +42,11 @@ http://localhost:3000/
 
 Live: https://tracker-a3d83.firebaseapp.com/
 
+## Log in
+
+user: guest@test.com
+pw: password
+
 
 
 
