@@ -242,4 +242,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, { editJob })(ViewJobs);
-

@@ -11,9 +11,13 @@ class Search extends Component {
         super(props);
     }
 
+
+
     getRows() {
         const  { jobs }  = this.props;
+
         return jobs.addJob
+
     }
 
     render() {

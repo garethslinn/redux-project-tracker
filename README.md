@@ -28,13 +28,18 @@ A very simplified project tracker using React with Redux
 
 Sync data with firebase
 
-Fix sign out button defect on sign in page
-
-Fix EDIT_JOB entry into id
+Tests
 
 Apply an admin area and resctrict only to admin
 
 Brand Tracker and overhaul layout
+
+Upload screen shots
+
+## Known defects
+sign out button defect on sign in page
+
+EDIT_JOB entry into id (should not be displaying id)
 
 
 ## To start
