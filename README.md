@@ -37,7 +37,7 @@ Brand Tracker and overhaul layout
 Upload screen shots
 
 ## Known defects
-sign out button defect on sign in page
+<del>sign out button defect on sign in page</del>
 
 EDIT_JOB entry into id (should not be displaying id)
 

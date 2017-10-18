@@ -4,6 +4,7 @@ import { editJob } from "../actions/job_action";
 import Header from './global/Header';
 import Footer from './global/Footer';
 import Nav from './Nav';
+import Logout from './global/Logout';
 
 class ViewJobs extends Component {
     constructor(props) {
@@ -213,6 +214,7 @@ class ViewJobs extends Component {
     render() {
         return(
             <div className="container">
+                <Logout />
                 <Header />
                 <Nav />
                 <div className="UsersTable">

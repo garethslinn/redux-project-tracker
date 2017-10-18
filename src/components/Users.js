@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addUser, removeUser } from "../actions/user_action";
+import Logout from './global/Logout';
 import Nav from './Nav';
 import Header from './global/Header';
 import Footer from './global/Footer';
+
 
 class AddUsers extends Component {
     constructor(props) {
@@ -71,6 +73,7 @@ class AddUsers extends Component {
 
 
             <div className="container">
+                <Logout />
                 <Header />
                 <Nav />
             <div className="UsersTable">
@@ -79,7 +82,7 @@ class AddUsers extends Component {
                 </div>
 
                 <div className="form-group row">
-                    <label for="firstName" className="col-sm-2 col-form-label">First Name</label>
+                    <label htmlFor="firstName" className="col-sm-2 col-form-label">First Name</label>
                     <div className="col-sm-10">
                         <input
                             id="firstName"
@@ -90,7 +93,7 @@ class AddUsers extends Component {
                         />
                     </div>
 
-                    <label for="lastName" className="col-sm-2 col-form-label">Last Name</label>
+                    <label htmlFor="lastName" className="col-sm-2 col-form-label">Last Name</label>
                     <div className="col-sm-10">
                         <input
                             id="lastName"
@@ -101,7 +104,7 @@ class AddUsers extends Component {
                         />
                     </div>
 
-                    <label for="email" className="col-sm-2 col-form-label">Email</label>
+                    <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
                     <div className="col-sm-10">
                         <input
                             id="email"

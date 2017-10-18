@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Header from './global/Header';
 import Footer from './global/Footer';
 import SearchTable from 'reactable-search';
+import Logout from './global/Logout';
 
 import Nav from './Nav';
 
@@ -25,6 +26,7 @@ class Search extends Component {
 
         return(
             <div className="container">
+                <Logout />
                 <Header />
                 <Nav />
                 <h1>Search jobs</h1>

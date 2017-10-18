@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { addJob } from "../actions/job_action";
 import Header from './global/Header';
 import Footer from './global/Footer';
-
-
+import Logout from './global/Logout';
 import Nav from './Nav';
 
 class AddJobs extends Component {
@@ -44,7 +43,7 @@ class AddJobs extends Component {
         return (
 
                 <div className="col-sm-4">
-                    <label for="assignedTo" className="col-sm-12 col-form-label">Assigned to:</label>
+                    <label htmlFor="assignedTo" className="col-sm-12 col-form-label">Assigned to:</label>
                     <select id="assignedTo" className="form-select" onChange={event => this.setState({assigned: event.target.value})}>
                         <option value="">Assigned To</option>
                     {
@@ -66,7 +65,7 @@ class AddJobs extends Component {
         const  { jobs } = this.props;
         return (
                 <div className="col-sm-4">
-                    <label for="sprint" className="col-sm-12 col-form-label">Sprint</label>
+                    <label htmlFor="sprint" className="col-sm-12 col-form-label">Sprint</label>
                     <select id="sprint" className="form-select" onChange={event => this.setState({sprint: event.target.value})}>
                         <option value="">Sprint</option>
                         {
@@ -127,6 +126,7 @@ class AddJobs extends Component {
 
         return(
             <div className="container">
+                <Logout />
                 <Header />
                 <Nav />
                 <div className="UsersTable">
@@ -136,7 +136,7 @@ class AddJobs extends Component {
                     <div>
                         <div className="form-group">
 
-                            <label for="jobNo" className="col-sm-2 col-form-label">Sprint</label>
+                            <label htmlFor="jobNo" className="col-sm-2 col-form-label">Sprint</label>
                             <div className="col-sm-10">
                                 <input
                                     id="jobNo"
@@ -148,7 +148,7 @@ class AddJobs extends Component {
                                 />
                             </div>
 
-                            <label for="title" className="col-sm-2 col-form-label">Title</label>
+                            <label htmlFor="title" className="col-sm-2 col-form-label">Title</label>
 
                             <div className="col-sm-10">
                                 <input
@@ -160,7 +160,7 @@ class AddJobs extends Component {
                                 />
                             </div>
 
-                            <label for="description" className="col-sm-2 col-form-label">Description</label>
+                            <label htmlFor="description" className="col-sm-2 col-form-label">Description</label>
                             <div className="col-sm-10">
                                 <textarea
                                     id="description"
@@ -175,7 +175,7 @@ class AddJobs extends Component {
                         <div className="col-sm-12">
                             <div className="row">
                                 <div className="col-sm-4">
-                                    <label for="jobType" className="col-sm-12 col-form-label">Job Type</label>
+                                    <label htmlFor="jobType" className="col-sm-12 col-form-label">Job Type</label>
                                     <select id="jobType" className="form-select" onChange={event => this.setState({jobType: event.target.value})}>
                                         <option value="">Job Type</option>
                                         <option value="Task">Task</option>
@@ -189,7 +189,7 @@ class AddJobs extends Component {
                                 {this.handle_assigned()}
 
                                 <div className="col-sm-4">
-                                    <label for="role" className="col-sm-12 col-form-label">Role</label>
+                                    <label htmlFor="role" className="col-sm-12 col-form-label">Role</label>
                                     <select id="role" className="form-select" onChange={event => this.setState({role: event.target.value})}>
                                         <option value="">Role</option>
                                         <option value="Front End">Front End</option>
@@ -208,7 +208,7 @@ class AddJobs extends Component {
                                 {this.handle_sprint()}
 
                                 <div className="col-sm-4">
-                                    <label for="status" className="col-sm-12 col-form-label">Status</label>
+                                    <label htmlFor="status" className="col-sm-12 col-form-label">Status</label>
                                     <select id="status" className="form-select" onChange={event => this.setState({stat: event.target.value})}>
                                         <option value="">Status</option>
                                         <option value="To do">To do</option>
@@ -223,7 +223,7 @@ class AddJobs extends Component {
                                 </div>
 
                                 <div className="col-sm-4">
-                                    <label for="linked" className="col-sm-12 col-form-label">Linked</label>
+                                    <label htmlFor="linked" className="col-sm-12 col-form-label">Linked</label>
                                     <input
                                         id="linked"
                                         className="form-control"

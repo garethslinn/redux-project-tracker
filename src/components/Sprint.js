@@ -4,6 +4,7 @@ import { addSprint, removeSprint } from "../actions/sprint_action";
 import Nav from './Nav';
 import Header from './global/Header';
 import Footer from './global/Footer';
+import Logout from './global/Logout';
 
 class AddSprint extends Component {
     constructor(props) {
@@ -57,6 +58,7 @@ class AddSprint extends Component {
     render() {
         return (
             <div className="container">
+                <Logout />
                 <Header />
             <Nav />
             <form className="UsersTable">
@@ -66,7 +68,7 @@ class AddSprint extends Component {
 
                     <div className="form-group">
 
-                        <label for="sprint" className="col-sm-2 col-form-label">Sprint</label>
+                        <label htmlFor="sprint" className="col-sm-2 col-form-label">Sprint</label>
                         <div className="col-sm-10">
                             <input
                                 id="sprint"
@@ -79,7 +81,7 @@ class AddSprint extends Component {
 
                         </div>
 
-                        <label for="startDate" className="col-sm-2 col-form-label">Start date</label>
+                        <label htmlFor="startDate" className="col-sm-2 col-form-label">Start date</label>
                         <div className="col-sm-10">
                             <input
                                 id="startDate"
@@ -91,7 +93,7 @@ class AddSprint extends Component {
                             />
                         </div>
 
-                        <label for="endDate" className="col-sm-2 col-form-label">End date</label>
+                        <label htmlFor="endDate" className="col-sm-2 col-form-label">End date</label>
                         <div className="col-sm-10">
                             <input
                                 id="endDate"
