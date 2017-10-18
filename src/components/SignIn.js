@@ -65,6 +65,8 @@ class SignIn extends Component {
                 </div>
                 <div>{this.state.error.message}</div>
                     <div className="alert alert-info" role="alert">
+                        <h2>This project is NOT complete</h2>
+
                     <p>NOTE: you can sign in using guest:</p>
                     <ul>
                         <li>user: guest@test.com</li>

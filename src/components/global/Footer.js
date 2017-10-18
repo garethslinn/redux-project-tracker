@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class Footer extends Component {
     render() {
         return (
-            <nav>
+            <nav class="footer">
                 <ul className="nav footer">
                     <li className="nav-item">
                         <a className="nav-link active" href="/">Add Users</a>

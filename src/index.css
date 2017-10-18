@@ -81,6 +81,11 @@ select, input, textarea, button {
     background: #14CCB0;
 }
 
+.footer {
+    border-top: 1px solid #ccc;
+    font-size: 11px;
+}
+
 .main-title {
     padding-left: 20px;
     line-height: 0.3;
@@ -89,4 +94,34 @@ select, input, textarea, button {
 
 .in-progress {
     color: #ff0000;
+
+}
+
+.nav {
+    background: #077F35;
+
+}
+
+.nav a {
+    color: #fff;
+}
+
+.nav li a:hover {
+    background: #0EFF6A!important;
+    color: #000!important;
+}
+.nav-item:hover {
+
+}
+
+.footer .nav {
+    background: #fff;
+}
+
+.footer .nav a {
+     color: #000;
+}
+
+.footer .nav a:hover {
+    background: #fff!important;
 }
