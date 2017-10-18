@@ -1,5 +1,5 @@
 body {
-    background: #a9a9a9;
+    background: #fff;
 }
 
 .UsersTable {
@@ -10,8 +10,17 @@ body {
     align-items: center;
 }
 
+.logout {
+    background: #ccc;
+    padding: 10px;
+}
+
 .title {
     font-size: 22px;
+}
+
+.copy {
+    margin-top: 11px;
 }
 
 input {
@@ -73,8 +82,22 @@ select, input, textarea, button {
     background: #fff;
 }
 
+.logout-btn {
+    background: transparent;
+    border:none;
+    text-decoration: underline;
+}
+
+.login-btn {
+    margin-left: 5px;
+}
+
+.logout-btn:hover {
+    text-decoration: none;
+}
+
 .header {
-    margin-top: 10px;
+
 }
 
 .header-title {
@@ -93,7 +116,10 @@ select, input, textarea, button {
 }
 
 .in-progress {
-    color: #ff0000;
+    background: #ff0000;
+    color: #fff;
+    display: inline-block;
+    padding: 3px 5px;
 
 }
 

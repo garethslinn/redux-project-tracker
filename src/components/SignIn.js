@@ -53,7 +53,7 @@ class SignIn extends Component {
                             onChange={ event => this.setState({ password: event.target.value })}
                         />
                         <button
-                            className="btn btn-button"
+                            className="btn btn-button login-btn"
                             type="button"
                             onClick={ () => this.signIn() }
                         >
