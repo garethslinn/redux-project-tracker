@@ -53,7 +53,7 @@ class ViewJobs extends Component {
                     jobs.map(job => {
 
                         return (
-
+                            <div className="col-sm-12 float-none">
                             <div className="row" key={job.id} >
                                 <div className="col">
                                     <input
@@ -149,11 +149,14 @@ class ViewJobs extends Component {
 
                                 </div>
                             </div>
-
+                            </div>
                         )
                     })
                 }
             </div>
+
+
+
 
         )
     }
@@ -221,13 +224,13 @@ class ViewJobs extends Component {
                     <div className="title">
                         View Item
                     </div>
-                    <div className="container">
-                        <div className="form-group">
 
-                            { this.getView() }
+                    <div className="form-group">
 
-                        </div>
+                        { this.getView() }
+
                     </div>
+
 
                 </div>
                 <Footer />

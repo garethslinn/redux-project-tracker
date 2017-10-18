@@ -116,7 +116,7 @@ class AddSprint extends Component {
 
 
 
-                <div className="container">
+                <div>
                     <table className="table table-striped table-responsive">
                         <thead>
                         <tr>

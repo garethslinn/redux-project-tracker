@@ -18,6 +18,7 @@ class Logout extends Component {
 
         return (
             <div className="clearfix">
+                <p className="float-left in-progress">Work in progress...</p>
                 <button onClick={this.handle_logout} className="btn btn-warning float-right">Sign out</button>
             </div>
         )
